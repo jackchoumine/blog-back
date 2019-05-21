@@ -75,11 +75,18 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: ocean
+
+# hexo-generator-searchdb 搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  content: true
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository:
       #github: git@github.com:ShomyLiu/ShomyLiu.github.io.git还可以github也一起
-      coding: git@git.coding.net:shomyliu/shomyliu.git
+      coding: https://github.com/JackZhouMine/jackzhoumine.github.io.git
   branch: master
