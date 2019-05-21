@@ -1,6 +1,7 @@
 ---
 title: NPM 使用教程
 date: 2019-05-18 16:18:12
+git_issue_id: 1
 tags:
 - npm
 - node

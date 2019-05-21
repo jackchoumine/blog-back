@@ -1,6 +1,7 @@
 ---
 title: 使用hexo + github搭建个人主页
 date: 2019-05-18 02:30:28
+git_issue_id: 0
 tags: hexo
 categories:
 - [node]

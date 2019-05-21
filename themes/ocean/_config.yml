@@ -35,9 +35,9 @@ search_text: 搜索
 
 # Gitalk
 gitalk:
-  enable: false      # 默认关闭评论 开启：true
-  clientID:      # 申请 GitHub Application 网页上对应的 Client ID 与 Client Secret 参数
-  clientSecret:      # 同上
-  repo:      # 创建的仓库名称
-  owner:      # Github ID
-  admin:      # Github ID
+  enable: true      # 默认关闭评论 开启：true
+  clientID: 90f92ec37c1bf3ff8c87 # 申请 GitHub Application 网页上对应的 Client ID 与 Client Secret 参数
+  clientSecret: c746c91801c749223e933fb3393dd4fd7f0e53a6 # 同上
+  repo: blog-comment # 创建的仓库名称
+  owner: jackzhoumine # Github ID https://api.github.com/users/jackzhoumine 获取
+  admin: jackzhoumine # Github ID 21340150
