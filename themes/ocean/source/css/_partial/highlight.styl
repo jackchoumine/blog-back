@@ -1,11 +1,10 @@
-highlight-background = #f6f8fa
-// highlight-background = #272822
-highlight-current-line = #efefef
-highlight-selection = #d6d6d6
-highlight-foreground = #4d4d4c
-// highlight-foreground = #ffffff
-highlight-comment = #8e908c
-// highlight-comment = #858980
+highlight-background = #2d2d2d
+// 文章中``（单行代码） 代码的背景色
+highlight-code-background = #c6cbd1
+highlight-current-line = #393939
+highlight-selection = #515151
+highlight-foreground = #ffffff
+highlight-comment = #999999
 highlight-red = #f2777a
 highlight-orange = #f99157
 highlight-yellow = #ffcc66
@@ -30,8 +29,8 @@ $line-numbers
     font-family inherit
     text-shadow none
   code
-    background highlight-background
-    padding .25rem
+    background highlight-code-background
+    padding .30rem
     border-radius(.4rem)
   pre
     @extend $code-block
