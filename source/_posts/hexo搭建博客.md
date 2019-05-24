@@ -91,6 +91,7 @@ timezone:
 npm i -S hexo-deployer-git
 ```
 3. 部署
+
 ```bash
 hexo g -d
 ```

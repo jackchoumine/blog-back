@@ -11,6 +11,9 @@ favicon: /favicon.ico
 # brand: /images/hexo.svg
 brand: /images/portrait.png
 
+# 目录
+toc:
+  maxDepth: 3
 # Ocean 主页视频
 # 多种格式的视频用于支持不同的浏览器，这里只需要配置好路径，前提是我把视频相关文件统一目录存放。
 ocean:
