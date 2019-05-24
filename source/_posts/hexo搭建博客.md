@@ -170,7 +170,73 @@ hexo publish filename
 ~~yilia 主题没有引入 stackoverflow ,可执行增加。
 Acfun已经凉了，在 `themes\yilia\source\main.0cf68a.css`中搜索acfun，替换成stackoverflow，图标就不换了。~~
 
+### 增加推荐阅读
 
+推荐阅读是通过插件 hexo-recommended-posts 来实现的, 它不仅可以推荐你自己的博客, 还可以推荐别人的相关博客. 如果有比较多人使用这个插件的话, 不仅能帮读者快速找到感兴趣的内容, 同时也能增加自己博客的流量。
+
+1. 在 post 中增加 `recommended-post.ejs` 
+
+```ejs
+<% if(theme.recommended_posts.enable  && !index) {%>
+  <div class="recommended_posts">
+    <h3>推荐阅读</h3>
+    <ul>
+    <% let post_list = recommended_posts(page, site) %>
+    <% for (let i in post_list){%>
+      <li>
+        <a href="<%= post_list[i].permalink %>"  title="<%= post_list[i].title %>" target='_blank'>
+        <%- post_list[i].title %>
+        </a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+<%}else{%>
+   <div class="recommended_posts" hidden></div>
+<%}%>
+```
+2. 在 _patial 中增加样式 `recommended-post.styl`
+
+```css
+.recommended_posts
+    padding: 0.5em 1em;
+    border-left: 3px solid #6f42c1;
+    background-color: #efefef;
+    li { margin: 5px 0; }
+    a:link { color: blue; }
+    a:hover { text-decoration:underline;color: red}
+    a:visited { color: green; }
+```
+3. 在`style.styl`和`article.ejs`中引入样式和ejs
+`@import "_partial/recommended-post"`
+
+引入的 ejs 放在评论上边。
+
+4. 增加配置项
+
+在主题的配置中增加：
+```yml
+# 推荐阅读 需要 hexo-recommended-posts 支持
+recommended_posts:
+  enable: true  # 启用文章推荐
+```
+在博客配置增加：
+```yml
+# 推荐阅读 需要 hexo-recommended-posts 支持
+recommended_posts:
+  autoDisplay: false #设置为 fasle，不采用默认样式
+```
+5. 安装 hexo-recommended-posts
+
+```bash
+npm i -S hexo-recommended-posts
+```
+6. 预览效果
+
+```bash
+hexo recommend && hexo clean && hexo g && hexo s
+```
+参考：[为 hexo maupassant 主题添加文章版权信息和推荐阅读功能 ](https://juejin.im/entry/5aef8e995188256712786e43)
 ## 写在最后
 
 发现一些网站，专门爬取别人写的文章，也不注明出处，该今后发表文章，都增加不限于打赏码、微信公众号等信息。

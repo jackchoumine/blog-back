@@ -35,16 +35,23 @@ fancybox: true
 
 # Local search
 search_text: 搜索
+
 # 版权申明
 declare_type: 2
 licensee_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 # licensee_name: '知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议'
 licensee_name: 'CC BY-NC-SA 4.0'
 licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
+
 # 打赏
 reward_type: 2 # 每篇文章都打赏
 alipay_QRcode_url: https://raw.githubusercontent.com/JackZhouMine/jack-picture/master/alipay2.jpg # 支付宝收款码
 wechat_QRcode_url: https://raw.githubusercontent.com/JackZhouMine/jack-picture/master/weixin2.jpg # 微信打赏码
+
+# 推荐阅读 需要 hexo-recommended-posts 支持
+recommended_posts:
+  enable: true
+
 # Gitalk
 gitalk:
   enable: true      # 默认关闭评论 开启：true

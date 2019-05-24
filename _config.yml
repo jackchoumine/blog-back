@@ -90,3 +90,6 @@ deploy:
       #github: git@github.com:ShomyLiu/ShomyLiu.github.io.git还可以github也一起
       coding: https://github.com/JackZhouMine/jackzhoumine.github.io.git
   branch: master
+# 推荐阅读 需要 hexo-recommended-posts 支持
+recommended_posts:
+  autoDisplay: false
