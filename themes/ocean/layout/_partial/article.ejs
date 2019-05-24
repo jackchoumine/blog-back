@@ -26,12 +26,13 @@
         <%- post.content %>
       <% } %>
     </div>
+    <%- partial('post/reward') %>
+    <%- partial('post/copy-right') %>
     <footer class="article-footer">
       <a data-url="<%- post.permalink %>" data-id="<%= post._id %>"
          class="article-share-link"><%- theme.share_text %></a>
       <%- partial('post/tag') %>
     </footer>
-
   </div>
 
   <% if (!index){ %>

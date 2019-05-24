@@ -1,0 +1,8 @@
+<%if((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){%>
+<h3 style="text-align:center">如有帮助，谢谢您请我喝咖啡 <i class="fe fe-smile"></i></h3>
+<p class="reward" style="text-align:center">
+  <img src="<%= theme.alipay_QRcode_url%>" title="支付宝扫一扫" alt="支付宝收款二维码" width="30%" height="30%" style="display:inline;"><img src="<%= theme.wechat_QRcode_url%>"  title="微信扫一扫" alt="微信打赏二维码" width="30%" height="30%" style="display:inline;">
+</p>
+<%}else{%>
+<p class="reward" hidden></p>
+<%}%>

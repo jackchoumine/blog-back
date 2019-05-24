@@ -175,8 +175,4 @@ Acfun已经凉了，在 `themes\yilia\source\main.0cf68a.css`中搜索acfun，�
 
 发现一些网站，专门爬取别人写的文章，也不注明出处，该今后发表文章，都增加不限于打赏码、微信公众号等信息。
 
-如有帮助，谢谢您请我喝可乐：
-
-<img src="https://raw.githubusercontent.com/JackZhouMine/jack-picture/master/alipay2.jpg"  title="支付宝扫一扫" width="50%" height="30%" style="display:inline;"><img src="https://raw.githubusercontent.com/JackZhouMine/jack-picture/master/weixin2.jpg"  title="微信扫一扫" width="50%" height="50%" style="display:inline;">
-
 [^说明]：使用ocean主题，yilia 主题设置就删除了。
