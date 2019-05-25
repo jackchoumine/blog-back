@@ -170,6 +170,10 @@ hexo publish filename
 ~~yilia 主题没有引入 stackoverflow ,可执行增加。
 Acfun已经凉了，在 `themes\yilia\source\main.0cf68a.css`中搜索acfun，替换成stackoverflow，图标就不换了。~~
 
+### 增加版权声明
+
+比较简单，[参考](https://blog.zscself.com/posts/ee4d9ecb/)
+
 ### 增加推荐阅读
 
 推荐阅读是通过插件 hexo-recommended-posts 来实现的, 它不仅可以推荐你自己的博客, 还可以推荐别人的相关博客. 如果有比较多人使用这个插件的话, 不仅能帮读者快速找到感兴趣的内容, 同时也能增加自己博客的流量。
@@ -177,7 +181,7 @@ Acfun已经凉了，在 `themes\yilia\source\main.0cf68a.css`中搜索acfun，�
 1. 在 post 中增加 `recommended-post.ejs` 
 
 ```ejs
-<% if(theme.recommended_posts.enable  && !index) {%>
+<% if(theme.recommended_posts.enable && !index) {%>
   <div class="recommended_posts">
     <h3>推荐阅读</h3>
     <ul>
