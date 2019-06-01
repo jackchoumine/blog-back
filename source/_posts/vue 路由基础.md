@@ -125,7 +125,6 @@ this.$router.push({name:'argu',params:{name:'jack'}})
 this.$router.push({path:'argu',query:{name:'jack'}});
 //  path  和 params 不可一起使用，params 会被忽略
 this.$router.push({path:'argu',params:{name:'jack'}});
-// 命名路由不可和 query 一起使用，name 会被忽略
 this.$router.push({name:'argu',query:{name:'jack'}});
 
 ```
@@ -164,7 +163,6 @@ this.$router.replace({name:'name_view',params:{age:24}});
 // path 和 query
 this.$router.replace({path:'name_view',query:{age:24}});
 // this.$router.replace({path:'/name/view',params:{age:24}});
-// this.$router.replace({path:'name_view',params:{age:24}});
 ```
 ### 重定向和别名
 
@@ -243,7 +241,7 @@ router.beforeEach((to, from, next) => {
 ```js
 {
 	name: 'home',
-	alias:'/home_page',// 路径别名
+	alias:'home_page',// 路径别名
 	path: '/',
 	component: Home
 }

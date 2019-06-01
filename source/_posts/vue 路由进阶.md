@@ -8,13 +8,13 @@ categories:
 - [vue]
 - [前端框架]
 ---
-根据不同路由传递不同的参数，从而实现组件的复用，就要动态地向路由组件传参。
+路由可向路由匹配的组件传递参数，`不同情况`向组件传递不同的参数，从而实现组件的复用。
 
 <!--more-->
 
 [TOC]
 
-## 路由组件传参数
+## 路由向组件传递参数
 
 和路由匹配的组件可以在组件中使用 `$route` 获取路由上的参数：
 
@@ -22,34 +22,78 @@ categories:
 
 `:`、`params`和`query`
 
-```html
-<h1>{{ $route.params.name }}</h1>
-// 使用 ： 传参
-<router-link to="/hello/hangge">跳转到 hello</router-link>
-this.$router.push("/hello/123/hangge");
-// params 传参
-<router-link :to="{name:'hello', params:{nme:'hangge'}}">
-  跳转到 hello
-</router-link>
-this.$router.push({
-  name:'hello',
-  params:{id:123, userName:'hangge'}
-});
+#### `:`在路径传递参数
 
-<h1>{{ $route.query.name }}<h1> 
-// 使用 query 传参
-<router-link :to="{path:'/hello', query:{name:'hangge'}}">
+```js
+{
+	path: "/argu/:id/book",
+	name: "argu",
+	component: () => import("@/views/ArguPage")
+}
+```
+`路径`中的一部分是参数，`必须`传递该参数：
+```html
+<!--路径跳转-->
+<router-link to="/argu/123/book">path跳转</router-link>
+<!--路由名跳转-->
+<router-link :to="{name:'argu',params:{id:'test'}}" tag="button">name+params跳转</router-link>
+<!--获取参数-->
+<h1>{{$route.params.id}}</h1><!--params的名字路径中的的参数名一致-->
+```
+此时 `path`+ `parmas`传递参数，`params`会被忽略。
+
+#### `params`+`name`传递参数
+
+路由：
+```js
+{
+	path: "/argu",
+	name: "argu",
+	component: () => import("@/views/ArguPage")
+}
+```
+跳转方式是 `name`+`params`+（query），通过`path`跳转，params 会被忽略。
+
+```html
+<router-link :to="{name:'argu', params:{name:'hangge'}}">
   跳转到 hello
 </router-link>
-this.$router.push({
-  path:'/hello',
-  query:{name:'hangge'}
-});
+// path + params ，params 会被忽略，因为路径中没有定义参数
+<router-link :to="{path:'/argu', params:{name:'hangge'}}">
+  跳转到 hello
+</router-link>
+```
+
+#### query 参数
+
+query 参数参数，表现为查询字符串，和`localtion.serach`一样的。
+
+不需要先在路径中先定义，可通过`path`、`path`+`query` 或者 `name` + `query` 传递参数。
+
+```html
+<router-link to="/argu?queryName=value">跳转到 hello</router-link>
+<router-link :to="{path:'/argu',query:{queryName:value}}">跳转到 argu</router-link>
+<router-link :to="{name:'argu',query:{queryName:value}}">跳转到 argu</router-link>
+<h1>{{ $route.query.queryName }}</h1>
+```
+函数传递 query
+
+```js
+// 主要是  $router 不是 $route
+go() {
+	this.$router.push({
+		name: 'argu',
+		query: {
+				queryName: "你好"
+			}
+		})
+	}
+}
 ```
 
 但是这样使得 `$route` 和组件耦合在一起，不方便组件的复用，如果能将路由中的参数传递到 组件的`props` 就好了，恰恰是可以这样设置的。
 
-### props 接收路由参数
+### props 接收路由的 `params`
 
 路由传参数的三种方式：
 
@@ -58,7 +102,7 @@ this.$router.push({
 ```js
 {
     path: '/user/:id', 
-  	component: User, 
+    component: User, 
     props: true //表明 将 id 作为 proos 传递到匹配的组件 User 中。
 }
 ```
@@ -75,7 +119,6 @@ export default {
 	}
 }
 ```
-
 2. 对象模式
 
 将路由的 `props` 属性设置一个对象，也可在组件中获取到该值，这种方式往往用于传递静态值，即 name 值不会变化。
@@ -112,16 +155,16 @@ props:{
 
 ```js
 {
-  name: 'about',
+	name: 'about',
 	path: '/about/:years', //params 有一个参数 years
 	props:(route) {
   		const now = new Date()
   		return {
 		// 将 years 改造成 name
     	name: (now.getFullYear() + parseInt(route.params.years)) + '!'
-       }
-	},
-  component: () => import('@/views/AboutPage'),
+        }
+	    },
+	component: () => import('@/views/AboutPage'),
 }
 ```
 
@@ -153,6 +196,16 @@ props: {
     }
 }
 ```
+### 完整的例子
+
+{% raw %}
+<p class="codepen" data-height="573" data-theme-id="0" data-default-tab="js,result" data-user="JackZhouMine" data-slug-hash="JqBzWE" style="height: 573px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="route 的 params 传递组件">
+  <span>See the Pen <a href="https://codepen.io/JackZhouMine/pen/JqBzWE/">
+  route 的 params 传递组件</a> by JackZhouMine (<a href="https://codepen.io/JackZhouMine">@JackZhouMine</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% endraw %}
 
 ##  HTML5 History 模式
 
@@ -238,7 +291,7 @@ router.afterEach((to,form)=>{
 })
 ```
 3. 路由独享守卫
-  只在匹配某个路由时执行。
+只在匹配某个路由时执行。
 
 4. 组件内守卫
 
