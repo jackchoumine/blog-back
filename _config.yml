@@ -76,6 +76,18 @@ pagination_dir: page
 # theme: landscape
 theme: ocean
 
+## 渲染 TOC
+markdown_it_plus:
+    highlight: true
+    html: true
+    xhtmlOut: true
+    breaks: true
+    langPrefix:
+    linkify: true
+    typographer:
+    quotes: “”‘’
+    pre_class: highlight
+
 # hexo-generator-searchdb 搜索
 search:
   path: search.xml
