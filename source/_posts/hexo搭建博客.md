@@ -8,6 +8,10 @@ categories:
 ---
 大学时搭建过 github 博客，但是后来没怎么弄了。感觉有点折腾，就没有继续维护了，今天再来重新搭建一个博客。本文记录搭建操作。
 <!--more-->
+***
+
+#[TOC]
+
 ## 预备知识：
 
 - npm 命令；
@@ -116,6 +120,9 @@ INFO  Created: E:\HexoPages\myBlog\source\_posts\first-note.md
 hexo g
 hexo s
 ```
+```bash
+hexo S --draft # 预览草稿
+```
 3. 部署到线上
 
 ```bash
@@ -139,6 +146,39 @@ hexo publish filename
 
  可以为博客增加评论功能，方便与他人交流。增加访客统计等。
 
+### 渲染文章目录(TOC)
+
+hexo 默认的渲染模块，不支持渲染TOC的，可使用[hexo-renderer-markdown-it-plus](https://www.npmjs.com/package/hexo-renderer-markdown-it-plus)实现渲染 TOC。
+- 安装
+```bash
+npm un hexo-renderer-marked # 卸载原来的渲染模块
+npm i hexo-renderer-markdown-it-plus -S
+```
+- 修改配置
+在配置文件中加入以下选项：
+```bash
+## 渲染 TOC
+markdown_it_plus:
+    highlight: true
+    html: true
+    xhtmlOut: true
+    breaks: true
+    langPrefix:
+    linkify: true
+    typographer:
+    quotes: “”‘’
+    pre_class: highlight
+```
+还可以看模块文档，配置其他高级选项。
+
+- 写文章
+只写 `TOC`，是不会渲染目录的，需要加上`#`,并且不会渲染一级标题。推荐在摘要后面写目录，并用横线分隔摘要。
+```bash
+<!--more-->
+***
+
+@[TOC]
+```
 ### 增加评论功能
 
 ~~yilia 主题配置开启就可。
