@@ -1,6 +1,7 @@
 ---
 title: 使用hexo + github搭建个人主页
-date: 2019-05-18 02:30:28
+date: 2019-10-06 02:02:19
+updated: 2019-10-06 02:03:10
 git_issue_id: 0
 tags: hexo
 categories:
@@ -97,7 +98,7 @@ npm i -S hexo-deployer-git
 3. 部署
 
 ```bash
-hexo g -d
+hexo d -g
 ```
 打开我的主页链接 `https://jackzhoumine.github.io`，看到页面就部署成功了。
 
@@ -117,6 +118,8 @@ hexo g -d
 ```bash
 hexo g
 hexo s
+# 或者 
+hexo s g
 ```
 ```bash
 hexo S --draft # 预览草稿
@@ -136,7 +139,7 @@ hexo publish filename # 将草稿发布成文章，会进入 post 目录
 # 非必需
 hexo clean # 清除缓存文件（db.json）和静态文件。更改后不生效，就需要运行该命令。
 # 部署
-hexo g -d # 部署到线上
+hexo d g # 部署到线上
 ```
 5. 更新已发布的文章
 

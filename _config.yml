@@ -76,7 +76,7 @@ pagination_dir: page
 # theme: landscape
 theme: ocean
 
-#updated_at: true
+updated_at: true
 ## 渲染 TOC
 markdown_it_plus:
     highlight: true
