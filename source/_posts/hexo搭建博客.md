@@ -118,23 +118,32 @@ hexo g -d
 hexo g
 hexo s
 ```
-
 ```bash
 hexo S --draft # 预览草稿
 ```
-3. 部署到线上
-
-```bash
-hexo clean # 清除缓存文件（db.json）和静态文件。更改后不生效，就需要运行该命令。
-hexo g -d # 部署到线上
-```
-4. 创建草稿
+3. 创建草稿
 
 可先创建草稿，想发布时，在发布。
 ```bash
 hexo new draft "文章标题" # 会在 /source/-drafts 里生成草稿
-hexo publish filename
+hexo publish filename # 将草稿发布成文章，会进入 post 目录
 ```
+如何批量发布呢？
+
+4. 部署到线上
+
+```bash
+# 非必需
+hexo clean # 清除缓存文件（db.json）和静态文件。更改后不生效，就需要运行该命令。
+# 部署
+hexo g -d # 部署到线上
+```
+5. 更新已发布的文章
+
+最简单的是修改完文章后，再部署一次。
+
+文章加上更新时间，可在主题里配置。
+我使用更加粗暴的方法，每次更新文章，就使用 vs code 扩展 `Insert Date String` 插入当前时间。
 
 ## 给 markdown 文章加入图片
 

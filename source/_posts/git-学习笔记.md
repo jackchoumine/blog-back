@@ -1,6 +1,6 @@
 ---
 title: git 学习笔记
-date: 2019-06-16 21:25:40
+date: 2019-10-06 01:57:52
 tags:
 - git
 - github
@@ -749,6 +749,7 @@ git push origin <branch-name> # 待验证
 
 >[git relog VS git log](https://wjp2013.github.io/tool/git-reflog-git-log-git-cherry-pick/) 
 >[Undo changes in Git - Cheat sheet for git checkout, stash, reset, clean, revert, rebase -i, amend](https://dev.to/mzanggl/undo-changes-in-git-cheat-sheet-for-git-checkout-stash-reset-clean-revert-rebase-i-amend-2h1h)
+>[temporary_undo_and_red](https://sdqweb.ipd.kit.edu/wiki/Git_undo#temporary_undo_and_redo)
 ### git 进阶
 >[A Hacker's Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git/)
 
