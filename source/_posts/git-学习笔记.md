@@ -11,7 +11,7 @@ categories:
 Git是一个分布式版本控制系统（CVS），可以记录**文本文件**的**变化**（*修改、增加、删除等操作*），比如 TXT、HTML、程序源代码等，<span style="color:red;">不能记录其他文件（图片、音频等二进制文件）的变化，不能记录word文档的变化。</span>
 <!--more-->
 
-[TOC]
+@[TOC]
 
 ## Git常见操作
 
@@ -352,7 +352,7 @@ git diff >> diff.txt # 将比较结果输出到 diff.txt 文件中
 ><span style="color:red;">注意 git rm file 和 rm 的区别：</span>
 >**git rm file**:删除暂存区和工作区，需用用 **git checkeout HEAD -- file** 或者 **git checktout HEAD file**分支恢复。
 
-##远程仓库
+## 远程仓库
 
 1. 在 Github 上创建仓库并关联本地仓库
   Git 是分布式版本控制系统，同一个 Git 版本仓库，可分布到不同的机器上，这些机器上的版本库都是一样的。现在只有一台机器，如何分布？
@@ -595,22 +595,111 @@ git rm -r <dir>\*.md
 git add .
 ```
 
-## .igonre 文件相关
+## .gitignore 文件相关
 
-### 常见项目的 igonre 文件
+### 忽略规则
+
+`.gitignore` 列出的`目录`或者`文件`是不被 git 跟踪的。常常需要忽略的文件如下：
+1. 临时资源，比如缓存、日志、编译后的源码等；
+2. 开发环境配置文件，不同的开发人员有不同的开发习惯，环境配置文件不该被跟踪；
+3. 敏感信息，比如数据库密码、秘钥等。
+
+匹配规则：会以 `.gitignore` 所在目录为顶级目录或者当前目录，**递归**地匹配路径或文件，后面的规则会覆盖前面的规则。
+
+一个文件或者目录被忽略，**不会**有以下行为：
+1. 被 git 跟踪；
+2. 反映到 `git status` 或 `git diff`等命令中；
+3. 被暂存，比如 `git add -A` 不会暂存被忽略的文件。
+
+#### 常见的规则模式
+
+`#` 是注释，注释不能和规则同行，否则规则失效。规则含有 `#`，使用反斜线 `/` 转义。
+1. 常用规则
+
+```bash
+# 某类型文件，使用扩展名
+*.js
+*.log
+# 排除特定文件
+!index.js
+# 特定文件
+index.css
+test.json
+
+# 目录及其内容
+node_modules/
+# 当前目录下的某个目录 .gitignore 所在目录为顶级目录
+/node_modules/
+
+# 任意目录或文件
+node_modules
+# 当前目录下的任意目录或文件
+/node_modules
+```
+2. 高级规则
+
+```bash
+# 子目录 两层关系
+target/logs/
+# 孙子目录 三层关系
+target/*/logs/
+# 后代目录 任意层关系
+target/**/logs/
+
+# 可选字符匹配 
+# 匹配 build/Build 文件或目录 Build 不会匹配 uild
+[bB]uild 
+# 匹配 .pyc 或 .pyo
+.py[co]
+
+# 特定目录下文件
+target/*/.bin/*.js
+# 目录匹配通配符
+# 匹配 .deploy_git .deployB
+.deploy*/
+```
+
+#### 其他忽略方式
+
+`.gitingore` 文件应该被提交到仓库里，但是会暴露你的忽略规则，如果不想暴露，可使用以下方式设置：
+- .git/info/exclude 文件配置；
+- 配置全局忽略文件。
+
+### 常见项目的 .gitignore 文件
+
+- [常见gitignore模板](https://github.com/github/gitignore)
+- [在线生成gitignore文件](https://www.gitignore.io/)
 
 ### 列出忽略的文件
 
 1. git status
 
 ```bash
-git status --igonred
+git status --ignored
 ```
 2. git ls-files
 
 ```bash
 git ls-files --others -i --exclude-standard
 ```
+
+### 删除忽略文件
+
+`git clean -x` 可删除忽略文件,和 `git reset --hard` 一起使用可完全回到某个 commit 状态。
+
+```bash
+git clean -n # clean 演练，告知哪些文件会被删除
+# 删除当前目录下所有没有 track 的文件，不删除 .gitignore 文件里的文件
+git clean -f  <path> # 指定路径 path
+
+# 删除当前目录下没有被 track 的文件和目录
+git clean -df
+
+# 所有没有被 track 的目录和文件，不管 .gitignore 是否匹配
+git clean -xf
+# 
+```
+
 
 ### 列出被跟踪的文件
 ```bash
@@ -659,7 +748,7 @@ git push origin <branch-name> # 待验证
 ## todo
 
 >[git relog VS git log](https://wjp2013.github.io/tool/git-reflog-git-log-git-cherry-pick/) 
-
+>[Undo changes in Git - Cheat sheet for git checkout, stash, reset, clean, revert, rebase -i, amend](https://dev.to/mzanggl/undo-changes-in-git-cheat-sheet-for-git-checkout-stash-reset-clean-revert-rebase-i-amend-2h1h)
 ### git 进阶
 >[A Hacker's Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git/)
 

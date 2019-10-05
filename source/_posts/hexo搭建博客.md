@@ -108,10 +108,8 @@ hexo g -d
 1. 创建文章
 
 执行`hexo new '文章标题'`，会在source/_posts文件夹内新建一个md文件，就可在里面写文章了，当然也可以手动创建。
-```bash
-$ hexo new  first-note
-INFO  Created: E:\HexoPages\myBlog\source\_posts\first-note.md
-```
+
+`hexo new` 简写成 `hexo n`。
 
 2. 预览效果
 
@@ -120,6 +118,7 @@ INFO  Created: E:\HexoPages\myBlog\source\_posts\first-note.md
 hexo g
 hexo s
 ```
+
 ```bash
 hexo S --draft # 预览草稿
 ```
