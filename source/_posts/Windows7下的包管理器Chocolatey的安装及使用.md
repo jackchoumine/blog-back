@@ -1,10 +1,12 @@
 ---
 title: Windows7下的包管理器Chocolatey的安装及使用
 tags:
-- 数码产品
+  - 数码产品
 categories:
-- [开发工具]
+  - - 开发工具
+date: 2019-10-07 21:16:39
 ---
+
 
 以前安装过 chocolatey，win7 下报错，试了几次都没成功，今天学习 electron，又安装了一次，居然成功了。记录一下安装和使用。
 <!-- more -->
