@@ -43,7 +43,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -52,7 +52,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -79,15 +79,15 @@ theme: ocean
 updated_at: true
 ## 渲染 TOC
 markdown_it_plus:
-    highlight: true
-    html: true
-    xhtmlOut: true
-    breaks: true
-    langPrefix:
-    linkify: true
-    typographer:
-    quotes: “”‘’
-    pre_class: highlight
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  pre_class: highlight
 
 # hexo-generator-searchdb 搜索
 search:
@@ -100,8 +100,8 @@ search:
 deploy:
   type: git
   repository:
-      #github: git@github.com:ShomyLiu/ShomyLiu.github.io.git还可以github也一起
-      coding: https://github.com/JackChouMine/JackChouMine.github.io.git
+    github: git@github.com:jackchoumine/jackchoumine.github.io.git # 还可以 github 也一起
+    # coding: https://github.com/JackChouMine/JackChouMine.github.io.git
   branch: master
 # 推荐阅读 需要 hexo-recommended-posts 支持
 recommended_posts:
