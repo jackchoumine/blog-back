@@ -100,8 +100,9 @@ search:
 deploy:
   type: git
   repository:
-    github: git@github.com:jackchoumine/jackchoumine.github.io.git # 还可以 github 也一起
-    # coding: https://github.com/JackChouMine/JackChouMine.github.io.git
+    # 执行 hexo deploy，public 目录下的文件会推送到该仓库
+    github: git@github.com:jackchoumine/jackchoumine.github.io.git
+    # coding: https://github.com/JackChouMine/JackChouMine.github.io.git # 可指定多个仓库
   branch: master
 # 推荐阅读 需要 hexo-recommended-posts 支持
 recommended_posts:
