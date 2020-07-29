@@ -5,6 +5,10 @@
   "hexo": {
     "version": "3.8.0"
   },
+  "scripts": {
+    "view": "npx hexo g && npx hexo s",
+    "d": "npx hexo clean && hexo g -d"
+  },
   "dependencies": {
     "hexo": "^3.8.0",
     "hexo-deployer-git": "^1.0.0",
@@ -19,5 +23,8 @@
     "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3"
+  },
+  "devDependencies": {
+    "hexo-cli": "^4.1.0"
   }
 }
