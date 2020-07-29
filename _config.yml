@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: JackZhouMine
+title: JackChouMine
 subtitle:
 description:
 keywords:
-author: JackZhouMine
+author: JackChouMine
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://jackzhoumine.github.io
+url: https://JackChouMine.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -101,7 +101,7 @@ deploy:
   type: git
   repository:
       #github: git@github.com:ShomyLiu/ShomyLiu.github.io.git还可以github也一起
-      coding: https://github.com/JackZhouMine/jackzhoumine.github.io.git
+      coding: https://github.com/JackChouMine/JackChouMine.github.io.git
   branch: master
 # 推荐阅读 需要 hexo-recommended-posts 支持
 recommended_posts:

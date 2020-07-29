@@ -45,8 +45,8 @@ licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
 
 # 打赏
 reward_type: 2 # 每篇文章都打赏
-alipay_QRcode_url: https://raw.githubusercontent.com/JackZhouMine/jack-picture/master/alipay2.jpg # 支付宝收款码
-wechat_QRcode_url: https://raw.githubusercontent.com/JackZhouMine/jack-picture/master/weixin2.jpg # 微信打赏码
+alipay_QRcode_url: https://raw.githubusercontent.com/jackchoumine/jack-picture/master/alipay2.jpg # 支付宝收款码
+wechat_QRcode_url: https://raw.githubusercontent.com/jackchoumine/jack-picture/master/weixin2.jpg # 微信打赏码
 
 # 推荐阅读 需要 hexo-recommended-posts 支持
 recommended_posts:
@@ -58,5 +58,5 @@ gitalk:
   clientID: 90f92ec37c1bf3ff8c87 # 申请 GitHub Application 网页上对应的 Client ID 与 Client Secret 参数
   clientSecret: c746c91801c749223e933fb3393dd4fd7f0e53a6 # 同上
   repo: blog-comment # 创建的仓库名称
-  owner: jackzhoumine # Github ID https://api.github.com/users/jackzhoumine 获取
-  admin: jackzhoumine # Github ID 21340150
+  owner: jackchoumine # Github ID https://api.github.com/users/jackchoumine 获取
+  admin: jackchoumine # Github ID 21340150
