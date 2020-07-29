@@ -5,6 +5,6 @@ Thumbs.db
 .txt
 node_modules/
 UsersAdministratorAppDataRoamingnpm-cache/
-# public/
+public/
 # themes/landscape
-# .deploy*/
+.deploy*/
