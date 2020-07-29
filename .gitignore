@@ -1,10 +1,15 @@
 .DS_Store
 Thumbs.db
-# db.json
 *.log
 .txt
 node_modules/
 UsersAdministratorAppDataRoamingnpm-cache/
-public/
+# 主题需要备份
 # themes/landscape
+# 文章模板需要备份
+# scaffolds 
+# hexo g 生成 public
+public/
+# hexo d 会生成
+db.json
 .deploy*/
