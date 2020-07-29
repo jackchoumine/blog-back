@@ -1,10 +1,10 @@
 .DS_Store
 Thumbs.db
-db.json
+# db.json
 *.log
 .txt
 node_modules/
 UsersAdministratorAppDataRoamingnpm-cache/
-public/
-themes/landscape
-.deploy*/
+# public/
+# themes/landscape
+# .deploy*/
